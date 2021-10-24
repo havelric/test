@@ -1,0 +1,118 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix s:  <http://nosql.opendata.cz/scrapyard/schema#> .
+@prefix sy: <http://nosql.opendata.cz/scrapyard/> .
+
+
+sy:m1
+    a s:Model ;
+    s:manufactured_to "2007" ;
+    s:manufactured_from "1999" ;
+    s:name "Fabia" ;
+    s:maker "Škoda".
+sy:m2
+    a s:Model ;
+    s:manufactured_to "2000" ;
+    s:manufactured_from "1996" ;
+    s:name "Octavia" ;
+    s:maker "Škoda"
+.
+sy:m3
+    a s:Model ;
+    s:manufactured_to "2003" ;
+    s:manufactured_from "1997" ;
+    s:name "Golf" ;
+    s:maker "Volkswagen"
+.
+sy:m4
+    a s:Model ;
+    s:manufactured_to "2005" ;
+    s:manufactured_from "1996" ;
+    s:name "Passat" ;
+    s:maker "Volkswagen"
+.
+_:model5
+    a s:Model ;
+    s:manufactured_from "2014" ;
+    s:name "Passat" ;
+    s:maker "Volkswagen"
+.
+sy:c3
+    a s:Car ;
+    s:model _:model5 ;
+    s:year "2017" ;
+    s:vin "1HGCR2F55FA064475" .
+
+sy:c1
+    a s:Car ;
+    s:model sy:m1 ;
+    s:year "2000" ;
+    s:vin "2LMDU88C58BJ64213" ;
+    s:parts sy:p6, sy:p7,sy:p8,sy:p9,sy:p10   .
+sy:p6
+    a s:Part ;
+    s:cost "300" ;
+    s:name "steering wheel" ;
+    s:model sy:m1, sy:m2
+.
+sy:p7
+    a s:Part ;
+    s:cost "300" ;
+    s:name "exhaust" ;
+    s:model sy:m1
+.
+sy:p8
+    a s:Part ;
+    s:cost "300" ;
+    s:name "heating" ;
+    s:model sy:m1, sy:m2, sy:m3
+.
+sy:p9
+    a s:Part ;
+    s:cost "300" ;
+    s:name "shock absorbers" ;
+    s:model sy:m1, sy:m4
+.
+sy:p10
+    a s:Part ;
+    s:cost "300" ;
+    s:name "air conditioning" ;
+    s:model sy:m1, sy:m2
+.
+
+sy:c2
+    a s:Car ;
+    s:model sy:m2 ;
+    s:year "2001" ;
+    s:vin "1N4AA5AP1CC843062" ;
+    s:parts sy:p1, sy:p2,sy:p3,sy:p4,sy:p5 .
+sy:p1
+    a s:Part ;
+    s:cost "250" ;
+    s:name "steering wheel" ;
+    s:model sy:m1, sy:m2
+.
+sy:p2
+    a s:Part ;
+    s:cost "500" ;
+    s:name "wheels" ;
+    s:model sy:m1, sy:m2, sy:m3, sy:m4
+.
+sy:p3
+    a s:Part ;
+    s:cost "2000" ;
+    s:name "windscreen" ;
+    s:model sy:m1
+.
+sy:p4
+    a s:Part ;
+    s:cost "300" ;
+    s:name "brakes" ;
+    s:model sy:m1, sy:m2
+.
+sy:p5
+    a s:Part ;
+    s:cost "300" ;
+    s:name "clutch" ;
+    s:model sy:m1, sy:m3
+.
+      
